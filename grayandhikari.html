@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>自動播放音樂 + Tally 表單</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 自動播放音樂 -->
+  <audio id="bgm" autoplay loop>
+    <source src="https://vocaroo.com/17qoleai7HQE" type="audio/mpeg">
+    您的瀏覽器不支援 audio 標籤。
+  </audio>
+
+  <!-- 嵌入 Tally 表單 -->
+  <iframe src="https://tally.so/r/w2R0EV" allow="autoplay"></iframe>
+
+  <script>
+    // 嘗試播放音樂（防止有些瀏覽器需要額外觸發）
+    const audio = document.getElementById('bgm');
+    window.addEventListener('click', () => {
+      audio.play();
+    });
+  </script>
+
+</body>
+</html>
